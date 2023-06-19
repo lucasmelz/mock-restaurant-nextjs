@@ -170,7 +170,7 @@ const CreateDishForm = ({ categories, setCreate, fetchDishes }: CreateDishFormPr
                             <CustomButton
                                 title='Create'
                                 btnType='submit'
-                                containerStyles='w-30 py-[16px] rounded-lg bg-orange-600 mx-2'
+                                containerStyles='w-28 py-[16px] rounded-lg bg-orange-600 mx-2'
                                 textStyles='text-white text-[14px] leading-[17px] font-bold'
                             />
                         </>

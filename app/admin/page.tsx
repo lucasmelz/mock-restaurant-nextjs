@@ -35,13 +35,6 @@ const Admin = () => {
         fetchCategories();
     }, [])
 
-    function categoryName(id: string) {
-        let found = categories.find(category => category.id === id)
-        if (found)
-            return found.name
-        return "undefined"
-    }
-
 
     return (
         <>
@@ -67,9 +60,17 @@ const Admin = () => {
 
             <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-y-4 gap-x-4 pt-4">
 
-                {dishes.reverse().map(({ id, name, description, image, category, price }) => (
-                    <EditableDish id={id} name={name} description={description} image={image} category={categoryName(category)} price={price} />
-                ))}
+                {dishes.map(({ id, name, description, image, category, price }) => {
+                    return (
+                        <EditableDish
+                            key={id}
+                            dishProps={{ id, name, description, image, category, price }}
+                            categories={categories}
+                            fetchDishes={fetchDishes}
+                        />
+                    );
+                })}
+
 
             </div>
         </>
