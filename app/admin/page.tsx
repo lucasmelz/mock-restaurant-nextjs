@@ -13,7 +13,7 @@ const Admin = () => {
     const fetchDishes = async () => {
         try {
             // const response = await fetch('/mocks/dishes.json');
-            const response = await fetch('/api/dishes');
+            const response = await fetch('/mocks/dishes.json');
             const data = await response.json();
             setDishes(data);
         } catch (error) {

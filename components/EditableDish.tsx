@@ -79,6 +79,7 @@ const EditableDish = ({ dishProps, categories, fetchDishes }: EditableDishProps)
 
     const deleteDish = async () => {
 
+        console.log("You want to delete the dish with id: " + id)
         let requestOptions: RequestInit = {
             method: "DELETE",
             headers: {
