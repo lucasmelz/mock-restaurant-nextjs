@@ -13,7 +13,7 @@ export async function GET() {
     return NextResponse.json(json)
 }
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
     try {
         // Read the existing data from the JSON file
         const dishes = await fsPromises.readFile(dishesFilePath, 'utf-8')
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     }
 }
 
-export async function PATCH(req: Request) {
+export async function PATCH(req: NextRequest) {
     // Step 1: read json file
     const dishes = await fsPromises.readFile(dishesFilePath, 'utf-8')
 
@@ -94,7 +94,7 @@ export async function PATCH(req: Request) {
 
 }
 
-export async function DELETE(req: Request) {
+export async function DELETE(req: NextRequest) {
 
     // Step 1: extract dish ID
     const { id } = await req.json();
